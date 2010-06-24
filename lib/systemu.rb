@@ -69,7 +69,7 @@ class SystemUniversal
         thread = nil
 
         quietly{
-          IO.popen "#{ @ruby } #{ c['program'] }", 'r+' do |pipe|
+          IO.popen "#{ @ruby } \"#{ c['program'] }\"", 'r+' do |pipe|
             line = pipe.gets
             case line
               when %r/^pid: \d+$/
